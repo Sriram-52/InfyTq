@@ -19,11 +19,23 @@ def is_prime(num, i):
 
 def find_largest_prime_factor(list_of_factors):
     #Accepts the list of factors and returns the largest prime factor
+    primeFactors = [x for x in list_of_factors if is_prime(x, x // 2)]
+    return max(primeFactors)
 
 def find_f(num):
+    return find_largest_prime_factor(find_factors(num))
     #Accepts the number and returns the largest prime factor of the number
 
 def find_g(num):
+    
+    count = 0
+    gsum = 0
+    while count < 9:
+        gsum += find_f(num)
+        num += 1
+        count += 1
+    return gsum
+        
     #Accepts the number and returns the sum of the largest prime factors of the 9 consecutive numbers starting from the given number
 
 #Note: Invoke function(s) from other function(s), wherever applicable.
