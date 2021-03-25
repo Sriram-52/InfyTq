@@ -13,7 +13,7 @@ def is_prime(num, i):
     if(i==1):
         return True
     elif(num%i==0):
-        return False;
+        return False
     else:
         return(is_prime(num,i-1))
 
